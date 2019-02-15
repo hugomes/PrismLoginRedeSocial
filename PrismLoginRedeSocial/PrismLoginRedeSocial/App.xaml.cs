@@ -26,6 +26,11 @@ namespace PrismLoginRedeSocial
             await NavigationService.NavigateAsync("NavigationPage/MainPage");
         }
 
+        public static void GoToStartPage(params string[] parametros)
+        {
+            App.Current.MainPage = new StartPage(parametros);
+        }
+
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();

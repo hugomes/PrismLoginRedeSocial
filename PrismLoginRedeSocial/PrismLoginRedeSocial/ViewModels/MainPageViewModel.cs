@@ -14,6 +14,14 @@ namespace PrismLoginRedeSocial.ViewModels
             : base(navigationService)
         {
             Title = "Main Page";
+            FacebookLoginCommand = new DelegateCommand(FacebookLogin);
+        }
+
+        public DelegateCommand FacebookLoginCommand { get; set; }
+
+        private void FacebookLogin()
+        {
+            App.Current.MainPage = new Views.FacebookLoginPage();
         }
     }
 }
